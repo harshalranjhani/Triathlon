@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+
+.first {
+    height: 100vh;
+    background-repeat: no-repeat, repeat;
+    background: url("https://i.pinimg.com/564x/70/17/00/7017007325acb696ffaea4353397c8ee.jpg") no-repeat center center/cover;
+    /* background-blend-mode: multiply; */
+}
+
+.second {
+    height: 100vh;
+    /* background-repeat: no-repeat; */
+    
+    background: url("https://i.pinimg.com/564x/cd/0e/21/cd0e21f63138337169983fa99fa9c946.jpg") no-repeat center center/cover;
+    background-blend-mode: multiply;
+}
+
+.third {
+    height: 100vh;
+    background-repeat: no-repeat, repeat;
+    background: url("https://i.pinimg.com/564x/b9/28/bd/b928bd52be1664a4569a49d3821ce656.jpg") no-repeat center center/cover;
+    /* background-blend-mode: multiply; */
+}
+
+.img-fluid {
+    height: inherit;
+}
