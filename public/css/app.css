@@ -24,14 +24,14 @@ body{
     display: none;
     font-size: 3rem !important;
     margin-top: 40vh;
-    margin-left: 18px;
+    margin-left: 50px;
     width: auto;
     color: #ffe8d6;
 }
 
 .harry-potter-button{
     display: none;
-    margin-left: 75px;
+    margin-left: 100px;
     border: none;
     border-radius: 50px;
     font-size: 1.5rem;
@@ -62,14 +62,14 @@ body{
     display: none;
     font-size: 3rem !important;
     margin-top: 40vh;
-    margin-left: 75px;
+    margin-left: 105px;
     width: auto;
     color: #ffe8d6;
 }
 
 .marvel-button{
     display: none;
-    margin-left: 75px;
+    margin-left: 110px;
     border: none;
     border-radius: 50px;
     font-size: 1.5rem;
@@ -154,10 +154,12 @@ h1{
 
     .harry-potter-heading{
         display: block;
+        margin-left: 20px;
     }
 
     .marvel-heading{
         display: block;
+        margin-left: 65px;
     }
 
     .hunger-games-heading{
@@ -167,10 +169,12 @@ h1{
 
     .harry-potter-button{
         display: block;
+        margin-left: 75px;
     }
 
     .marvel-button{
         display: block;
+        margin-left: 68px;
     }
 
     .hunger-games-button{

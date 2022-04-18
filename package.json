@@ -1,0 +1,23 @@
+{
+  "name": "quiz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshalranjhani/Triathlon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshalranjhani/Triathlon/issues"
+  },
+  "homepage": "https://github.com/harshalranjhani/Triathlon#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  }
+}
