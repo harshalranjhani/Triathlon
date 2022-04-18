@@ -9,8 +9,20 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.get('/',(req,res)=>{
     res.render('home');
-})
+});
+
+app.get('/quiz/harry-potter',(req,res)=>{
+    res.send(`<h1>HARRY POTTER</h1>`);
+});
+
+app.get('/quiz/marvel',(req,res)=>{
+    res.send(`<h1>MARVEL</h1>`);
+});
+
+app.get('/quiz/hunger-games',(req,res)=>{
+    res.send(`<h1>HUNGER GAMES</h1>`);
+});
 
 app.listen(3000,()=>{
     console.log('Listening on port 3000');
-})
+});
