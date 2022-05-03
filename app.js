@@ -5,14 +5,15 @@ const path = require("path");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname + '/public'));
 
 app.get('/',(req,res)=>{
     res.render('home');
 });
 
 app.get('/quiz/harry-potter',(req,res)=>{
-    res.send(`<h1>HARRY POTTER</h1>`);
+    res.render(`harryPotter`);
 });
 
 app.get('/quiz/marvel',(req,res)=>{
