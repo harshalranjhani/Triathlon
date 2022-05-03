@@ -10,6 +10,13 @@ const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 
+// 5 questions
+const limited_qs = [];
+for (i = 0; i < 5; i++) {
+  const random = Math.floor(Math.random() * 12) + 1;
+  limited_qs[i] = questions[random];
+}
+
 // if startQuiz button clicked
 start_btn.onclick = () => {
   info_box.classList.add("activeInfo"); //show info box
@@ -70,7 +77,7 @@ const bottom_ques_counter = document.querySelector("footer .total_que");
 
 // if Next Que button clicked
 next_btn.onclick = () => {
-  if (que_count < questions.length - 1) {
+  if (que_count < limited_qs.length - 1) {
     //if question count is less than total question length
     que_count++; //increment the que_count value
     que_numb++; //increment the que_numb value
@@ -92,11 +99,6 @@ next_btn.onclick = () => {
 // getting questions and options from array
 function showQuetions(index) {
   const que_text = document.querySelector(".que_text");
-  const limited_qs = [];
-  for (i = 0; i < 5; i++) {
-    const random = Math.floor(Math.random() * 12) + 1;
-    limited_qs[i] = questions[random]
-  }
   //creating a new span and div tag for question and option and passing the value using array index
   let que_tag =
     "<span>" +
@@ -141,12 +143,13 @@ function optionSelected(answer) {
 
   if (userAns == correcAns) {
     //if user selected option is equal to array's correct answer
-    userScore += 1; //upgrading score value with 1
+    userScore += 4; //upgrading score value with 1
     answer.classList.add("correct"); //adding green color to correct selected option
     answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
     console.log("Correct Answer");
     console.log("Your correct answers = " + userScore);
   } else {
+    userScore -= 1;
     answer.classList.add("incorrect"); //adding red color to correct selected option
     answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
     console.log("Wrong Answer");
@@ -171,27 +174,24 @@ function showResult() {
   quiz_box.classList.remove("activeQuiz"); //hide quiz box
   result_box.classList.add("activeResult"); //show result box
   const scoreText = result_box.querySelector(".score_text");
-  let totalScore = userScore * 4 + (12 - userScore) * -1;
-  if (userScore > 3) {
+  if (userScore > 10) {
     // if user scored more than 3
     //creating a new span tag and passing the user score number and total question number
     let scoreTag =
       "<span>and congrats! , You got <p>" +
       userScore +
       "</p> out of <p>" +
-      questions.length +
+      "20" +
       "</p></span>";
     scoreText.innerHTML = scoreTag; //adding new span tag inside score_Text
-  } else if (userScore > 1) {
+  } else if (userScore > 5) {
     // if user scored more than 1
     let scoreTag =
       "<span>and nice , You got <p>" +
       userScore +
       "</p> out of <p>" +
       questions.length +
-      "</p></span> <br> <span> Your total Score is: " +
-      totalScore +
-      "</span>";
+      "</p></span>";
     scoreText.innerHTML = scoreTag;
   } else {
     // if user scored less than 1
@@ -199,7 +199,7 @@ function showResult() {
       "<span>and sorry , You got only <p>" +
       userScore +
       "</p> out of <p>" +
-      questions.length +
+      "20" +
       "</p></span>";
     scoreText.innerHTML = scoreTag;
   }
