@@ -16,11 +16,11 @@ app.get("/quiz/harry-potter", (req, res) => {
 });
 
 app.get("/quiz/marvel", (req, res) => {
-  res.send(`<h1>MARVEL</h1>`);
+  res.render('marvel');
 });
 
 app.get("/quiz/hunger-games", (req, res) => {
-  res.send(`<h1>HUNGER GAMES</h1>`);
+  res.render('hg');
 });
 
 const port = process.env.PORT || 3000;
