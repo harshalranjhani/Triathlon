@@ -13,19 +13,19 @@ const timeCount = document.querySelector(".timer .timer_sec");
 // 5 questions
 const limited_qs = [];
 const is = [];
-for (i = 0; i < 5; i++) {
+while (limited_qs.length < 5) {
   const random = Math.floor(Math.random() * 12);
-  if (limited_qs.indexOf(random) === -1) {
-    limited_qs[i] = questions[random];
-    // is.push(random);
+  while (limited_qs.indexOf(questions[random]) === -1) {
+    limited_qs.push(questions[random]);
+    is.push(random);
   }
 }
 
 // if startQuiz button clicked
 start_btn.onclick = () => {
   info_box.classList.add("activeInfo"); //show info box
-  // console.log(limited_qs)
-  // console.log(is)
+  console.log(limited_qs);
+  console.log(is);
 };
 
 // if exitQuiz button clicked
