@@ -383,6 +383,7 @@ footer button.show{
 }
 
 @media screen and (max-width: 800px) {
+   
     
     .info_box{
         width: 75%;
@@ -412,16 +413,17 @@ footer button.show{
     
     .info_box .buttons{
         height: 60%;
-        display: flex;
+        display: block;
+        margin-top: 20px;
         align-items: center;
-        justify-content: flex-end;
-        padding: 10% 20%;
-        margin-left: 100px;
+        padding: 20%;
+        margin-right: 100px;
+        
         border-top: 1px solid lightgrey;
     }
     
     .info_box .buttons button{
-        margin: 0 70%;
+        margin: 10%;
         height: 100%;
         width: 150%;
         font-size: 16px;
@@ -432,6 +434,12 @@ footer button.show{
         border-radius: 5px;
         border: 1px solid #000;
         transition: all 0.3s ease;
+    }
+
+    .next_btn{
+        margin: 10%;
+        font-size: 2rem;
+        height: 2rem;
     }
     
     .quiz_box{
@@ -447,7 +455,7 @@ footer button.show{
     .quiz_box header{
         position: relative;
         z-index: 2;
-        height: 30px;
+        height: 30%;
         padding: 0 30px;
         background: #fff;
         border-radius: 5px 5px 0 0;
@@ -520,9 +528,9 @@ footer button.show{
     }
     
     footer{
-        height: 30%;
+        height: 50%;
         padding: 0 30%;
-        display: flex;
+        display: block;
         align-items: center;
         justify-content: space-between;
         border-top: 1px solid lightgrey;
@@ -540,9 +548,9 @@ footer button.show{
     }
 
     footer button{
-        height: 40%;
+        height: 60%;
         padding: 0 10%;
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 400;
         cursor: pointer;
         border: none;
@@ -599,14 +607,14 @@ footer button.show{
     }
 
     .result_box .buttons{
-        display: flex;
+        display: block;
         margin: 20px 0;
     }
 
     .result_box .buttons button{
-        margin: 0 10px;
+        margin: 10% ;
         height: 50%;
-        padding: 0 6%;
+        padding: 5%;
         font-size: 18px;
         font-weight: 500;
         cursor: pointer;
@@ -621,10 +629,12 @@ footer button.show{
             background: #000;
         }
         
+        
         .buttons button.restart:hover{
             background: #000;
         }
-           
+        
+        
         .buttons button.quit:hover{
             color: #fff;
             background: #000;;
