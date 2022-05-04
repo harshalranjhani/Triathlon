@@ -12,14 +12,20 @@ const timeCount = document.querySelector(".timer .timer_sec");
 
 // 5 questions
 const limited_qs = [];
+const is = [];
 for (i = 0; i < 5; i++) {
-  const random = Math.floor(Math.random() * 12) + 1;
-  limited_qs[i] = questions[random];
+  const random = Math.floor(Math.random() * 12);
+  if (limited_qs.indexOf(random) === -1) {
+    limited_qs[i] = questions[random];
+    // is.push(random);
+  }
 }
 
 // if startQuiz button clicked
 start_btn.onclick = () => {
   info_box.classList.add("activeInfo"); //show info box
+  // console.log(limited_qs)
+  // console.log(is)
 };
 
 // if exitQuiz button clicked
@@ -63,7 +69,6 @@ restart_quiz.onclick = () => {
   clearInterval(counterLine); //clear counterLine
   startTimer(timeValue); //calling startTimer function
   startTimerLine(widthValue); //calling startTimerLine function
-  timeText.textContent = "Time Left"; //change the text of timeText to Time Left
   next_btn.classList.remove("show"); //hide the next button
 };
 
@@ -138,7 +143,7 @@ function optionSelected(answer) {
   clearInterval(counter); //clear counter
   clearInterval(counterLine); //clear counterLine
   let userAns = answer.textContent; //getting user selected option
-  let correcAns = questions[que_count].answer; //getting correct answer from array
+  let correcAns = limited_qs[que_count].answer; //getting correct answer from array
   const allOptions = option_list.children.length; //getting all option items
 
   if (userAns == correcAns) {
