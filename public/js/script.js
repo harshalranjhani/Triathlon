@@ -7,7 +7,6 @@ const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
 const option_list = document.querySelector(".option_list");
 const time_line = document.querySelector("header .time_line");
-const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 
 // 5 questions
@@ -24,8 +23,8 @@ while (limited_qs.length < 5) {
 // if startQuiz button clicked
 start_btn.onclick = () => {
   info_box.classList.add("activeInfo");
-  console.log(limited_qs);
-  console.log(is);
+  // console.log(limited_qs);
+  // console.log(is);
 };
 
 // if exitQuiz button clicked
@@ -91,7 +90,6 @@ next_btn.onclick = () => {
     clearInterval(counterLine);
     startTimer(timeValue);
     startTimerLine(widthValue);
-    timeText.textContent = "Time Left";
     next_btn.classList.remove("show");
   } else {
     clearInterval(counter);
@@ -204,7 +202,7 @@ function showResult() {
 function startTimer(time) {
   counter = setInterval(timer, 1000);
   function timer() {
-    timeCount.textContent = time;
+    // timeCount.textContent = time;
     time--;
     if (time < 9) {
       let addZero = timeCount.textContent;
@@ -213,6 +211,7 @@ function startTimer(time) {
     if (time < 0) {
       clearInterval(counter);
       timeText.textContent = "Time Off";
+      console.log("Time up");
       const allOptions = option_list.children.length;
       let correcAns = questions[que_count].answer;
       for (i = 0; i < allOptions; i++) {
@@ -223,6 +222,7 @@ function startTimer(time) {
         }
       }
       for (i = 0; i < allOptions; i++) {
+        console.log("Hi");
         option_list.children[i].classList.add("disabled");
       }
       next_btn.classList.add("show");
@@ -248,5 +248,8 @@ function queCounter(index) {
     "</p> of <p>" +
     limited_qs.length +
     "</p> Questions</span>";
+  if (index === 5) {
+    next_btn.textContent = "Finish!";
+  }
   bottom_ques_counter.innerHTML = totalQueCounTag;
 }
